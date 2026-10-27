@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sazones del Mundo - Finalizar Pago</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        #modal-agradecimiento {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro semitransparente */
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        .contenido-modal {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            animation: escalaModal 0.3s ease-in-out;
+        }
+        @keyframes escalaModal {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .contenido-modal h2 {
+            color: #28a745;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+        .contenido-modal p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        .btn-volver {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-volver:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>💳 Finalizar Compra - Sazones del Mundo</h1>
+        <p>Completa tus datos y selecciona tu método de pago para confirmar el pedido.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index2.html">← Volver al Menú</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <main>
+        <section>
+            <h2>Resumen del Pedido</h2>
+            <p>Subtotal comida: <strong>$<span id="subtotal-comida">0</span> COP</strong></p>
+            <fieldset>
+                <legend><strong> Calculadora de Propina</strong></legend>
+                <br>
+                <label for="porcentaje-propina">Selecciona el porcentaje:</label><br>
+                <select id="porcentaje-propina" onchange="calcularTotales()">
+                    <option value="0">Sin propina (0%)</option>
+                    <option value="0.05" selected>Propina estándar (5%)</option>
+                    <option value="0.10">Excelente servicio (10%)</option>
+                    <option value="0.15">Servicio extraordinario (15%)</option>
+                    <option value="0.20">Servicio extraordinario (20%)</option>
+                    <option value="otro">Otro valor...</option>
+                </select>
+                <br><br>
+                <div id="campo-propina-custom" style="display: none;">
+                    <label for="propina-manual">Monto de propina voluntaria ($):</label><br>
+                    <input type="number" id="propina-manual" placeholder="Ej. 5000" value="0" min="0" oninput="calcularTotales()">
+                    <br><br>
+                </div>
+                <p>Monto de Propina: <strong>$<span id="monto-propina">0</span> COP</strong></p>
+            </fieldset>
+            <br>
+            <p><strong>Total Final a Pagar:</strong> $<span id="monto-total">0</span> COP</p>
+        </section>
+        <hr>
+        <form id="form-pasarela" action="#" method="POST">
+            <section>
+                <h3>1. Datos de Entrega</h3>
+                <label for="nombre-cliente">Nombre Completo:</label><br>
+                <input type="text" id="nombre-cliente" name="nombre" placeholder="Ej. Juan Pérez" required>
+                <br><br>
+                <label for="telefono-cliente">Teléfono de Contacto:</label><br>
+                <input type="tel" id="telefono-cliente" name="telefono" placeholder="Ej. 3001234567" required>
+                <br><br>
+                <label for="modalidad">Modalidad de Entrega:</label><br>
+                <select id="modalidad" name="modalidad" onchange="cambiarModalidad()">
+                    <option value="domicilio"> Pedido a Domicilio</option>
+                    <option value="restaurante"> Comer en el Restaurante (Mesa)</option>
+                </select>
+                <br><br>
+                <div id="campo-direccion">
+                    <label for="direccion">Dirección de Envío:</label><br>
+                    <input type="text" id="direccion" name="direccion" placeholder="Ej. Calle 45 # 10 - 20">
+                    <br><br>
+                </div>
+            </section>
+            <hr>        
+            <section>
+                <h3>2. Método de Pago</h3>
+                <label for="metodo-pago">Selecciona cómo deseas pagar:</label><br>
+                <select id="metodo-pago" name="metodo-pago" onchange="mostrarOpcionPago()" required>
+                    <option value="nequi">📱 Nequi / Daviplata</option>
+                    <option value="tarjeta">💳 Tarjeta de Crédito / Débito</option>
+                    <option value="efectivo">💵 Efectivo (Contra entrega o en mesa)</option>
+                </select>
+                <br><br>
+                <fieldset id="pago-nequi">
+                    <legend>Transferencia Digital</legend>
+                    <p>Realiza la transferencia al número <strong>314 865 9967</strong> e ingresa el número de comprobante:</p>
+                    <label for="num-comprobante">Número de Comprobante / Nro. de Transacción:</label><br>
+                    <input type="text" id="num-comprobante" placeholder="Ej. 12345678">
+                </fieldset>
+                <fieldset id="pago-tarjeta" style="display: none;">
+                    <legend>Datos de la Tarjeta</legend>
+                    <br>
+                    <label for="num-tarjeta">Número de Tarjeta:</label><br>
+                    <input type="text" id="num-tarjeta" placeholder="0000 0000 0000 0000" maxlength="19">
+                    <br><br>
+                    <label for="exp-tarjeta">Fecha de Expiración:</label><br>
+                    <input type="text" id="exp-tarjeta" placeholder="MM/AA" maxlength="5">
+                    <br><br>
+                    <label for="cvv-tarjeta">Código de Seguridad (CVV):</label><br>
+                    <input type="password" id="cvv-tarjeta" placeholder="123" maxlength="4">
+                </fieldset>
+                <fieldset id="pago-efectivo" style="display: none;">
+                    <legend>Pago en Efectivo</legend>
+                    <label for="monto-efectivo">¿Con cuánto dinero vas a pagar? (Para llevar el cambio):</label><br>
+                    <input type="number" id="monto-efectivo" placeholder="Ej. 50000">
+                </fieldset>
+            </section>
+            <br><hr><br>
+            <button type="submit" id="btn-confirmar-pago">
+                Confirmar y Pagar ($<span id="monto-boton">0</span> COP)
+            </button>
+        </form>
+    </main>
+    <div id="modal-agradecimiento">
+        <div class="contenido-modal">
+            <h2 id="titulo-agradec">¡Muchas gracias por tu compra! </h2>
+            <p id="texto-agradec">Tu pago ha sido procesado con éxito.</p>
+            <a href="index1.html" class="btn-volver">Volver</a>
+        </div>
+    </div>
+
+    <hr>
+    <script>
+        let subtotalComida = 0;
+        document.addEventListener('DOMContentLoaded', () => {
+            const carrito = JSON.parse(localStorage.getItem('carritoRestaurante')) || [];
+            subtotalComida = carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0);
+            document.getElementById('subtotal-comida').textContent = subtotalComida.toLocaleString('es-CO');
+            calcularTotales();
+        });
+        function calcularTotales() {
+            const opcionPropina = document.getElementById('porcentaje-propina').value;
+            const campoCustom = document.getElementById('campo-propina-custom');
+            let valorPropina = 0;
+
+            if (opcionPropina === 'otro') {
+                campoCustom.style.display = 'block';
+                const inputManual = document.getElementById('propina-manual').value;
+                valorPropina = parseFloat(inputManual) || 0;
+            } else {
+                campoCustom.style.display = 'none';
+                valorPropina = subtotalComida * parseFloat(opcionPropina);
+            }
+            const totalFinal = subtotalComida + valorPropina;
+            const propinaFormateada = Math.round(valorPropina).toLocaleString('es-CO');
+            const totalFormateado = Math.round(totalFinal).toLocaleString('es-CO');
+            document.getElementById('monto-propina').textContent = propinaFormateada;
+            document.getElementById('monto-total').textContent = totalFormateado;
+            document.getElementById('monto-boton').textContent = totalFormateado;
+        }
+        function cambiarModalidad() {
+            const modalidad = document.getElementById('modalidad').value;
+            const campoDireccion = document.getElementById('campo-direccion');
+            if (modalidad === 'restaurante') {
+                campoDireccion.style.display = 'none';
+            } else {
+                campoDireccion.style.display = 'block';
+            }
+        }
+        function mostrarOpcionPago() {
+            const metodo = document.getElementById('metodo-pago').value;
+            document.getElementById('pago-tarjeta').style.display = 'none';
+            document.getElementById('pago-nequi').style.display = 'none';
+            document.getElementById('pago-efectivo').style.display = 'none';
+            if (metodo === 'tarjeta') {
+                document.getElementById('pago-tarjeta').style.display = 'block';
+            } else if (metodo === 'nequi') {
+                document.getElementById('pago-nequi').style.display = 'block';
+            } else if (metodo === 'efectivo') {
+                document.getElementById('pago-efectivo').style.display = 'block';
+            }
+        }
+        
+        document.getElementById('form-pasarela').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const carrito = JSON.parse(localStorage.getItem('carritoRestaurante')) || [];
+            if (carrito.length === 0) {
+                alert('No tienes productos en el carrito para pagar.');
+                return;
+            }
+            const cliente = document.getElementById('nombre-cliente').value;
+            const metodo = document.getElementById('metodo-pago').value;
+            const totalPagado = document.getElementById('monto-total').textContent;
+            
+            // Limpiamos el carrito guardado
+            localStorage.removeItem('carritoRestaurante');
+
+            // Personalizamos el texto con los datos del cliente
+            document.getElementById('titulo-agradec').textContent = `¡Muchas gracias por tu compra, ${cliente}! 🎉`;
+            document.getElementById('texto-agradec').innerHTML = `Tu pago de <strong>$${totalPagado} COP</strong> realizado con <strong>${metodo.toUpperCase()}</strong> ha sido exitoso.<br><br>Pronto estaremos preparando tu pedido.`;
+
+            // Mostramos la ventana flotante en grande sobre toda la pantalla
+            document.getElementById('modal-agradecimiento').style.display = 'flex';
+        });
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

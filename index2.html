@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sazones del Mundo - Menú Principal</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <header>
+        <h1> Sazones del Mundo</h1>
+        <p>Los platillos más icónicos de la gastronomía internacional en un solo lugar.</p>
+    </header>
+    <hr>
+    <div>
+        <section id="menu-principal">
+            <h2>Nuestra Selección de Platillos</h2>
+            <article>
+                <h3>1. Tacos al Pastor</h3>
+                <img src="https://comedera.com/wp-content/uploads/sites/9/2017/08/tacos-al-pastor-receta.jpg" alt="Tacos al Pastor" width="300">
+                <p><strong>Descripción:</strong> Un clásico callejero originario de <strong>México</strong>.</p>
+                <p><strong>Precio:</strong> $18.000 COP</p>
+                <label for="cant-tacos">Cantidad:</label>
+                <input type="number" id="cant-tacos" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Tacos al Pastor" data-precio="18000" data-input="cant-tacos">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>2. Pizza Margherita</h3>
+                <img src="https://recetasdecocina.elmundo.es/wp-content/uploads/2025/09/pizza-margarita-1024x683.jpg" alt="Pizza Margherita" width="300">
+                <p><strong>Descripción:</strong> Especialidad tradicional nacida en Nápoles, <strong>Italia</strong>.</p>
+                <p><strong>Precio:</strong> $28.000 COP</p>
+                <label for="cant-pizza">Cantidad:</label>
+                <input type="number" id="cant-pizza" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Pizza Margherita" data-precio="28000" data-input="cant-pizza">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>3. California Roll</h3>
+                <img src="https://www.cocinista.es/download/bancorecursos/recetas/receta-california-maki-rollito.jpg" alt="California Roll" width="300">
+                <p><strong>Descripción:</strong> Variante del sushi tradicional adaptada en <strong>Japón</strong>.</p>
+                <p><strong>Precio:</strong> $25.000 COP</p>
+                <label for="cant-sushi">Cantidad:</label>
+                <input type="number" id="cant-sushi" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="California Roll" data-precio="25000" data-input="cant-sushi">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>4. Bandeja Paisa</h3>
+                <img src="https://gustoysaludencadabocado.com/wp-content/uploads/2024/02/bandeja-paisa-.jpg" alt="Bandeja Paisa Colombiana" width="300">
+                <p><strong>Descripción:</strong> El plato más representativo de la región andina de <strong>Colombia</strong>.</p>
+                <p><strong>Precio:</strong> $32.000 COP</p>
+                <label for="cant-bandeja">Cantidad:</label>
+                <input type="number" id="cant-bandeja" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Bandeja Paisa" data-precio="32000" data-input="cant-bandeja">🛒 Agregar al Carrito</button>
+            </article>
+        </section>
+        <br>
+        <a href="index4.html" style="text-decoration: none;">
+            <button type="button" style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #007BFF; color: white; border: none; border-radius: 5px;">
+                Ver todo el menú
+            </button>
+        </a>
+        <hr>
+        <section id="carrito-compras">
+            <h2>Resumen de tu Pedido Guardado</h2>          
+            <ul id="lista-carrito">
+            </ul>
+            <p><strong>Total a Pagar:</strong> $<span id="total-precio">0</span> COP</p>
+            <button type="button" id="btn-vaciar">Vaciar Carrito</button>          
+           <br><br>
+             <a href="index3.html" style="text-decoration: none;">
+                    <button type="button">💳 Ir a Pagar</button>
+                </a>
+        </section>
+    </div>
+    <hr>
+    <script src="script.js"></script>
+    <script src="script1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

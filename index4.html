@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sazones del Mundo - Menú Internacional</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+     <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <header>
+        <h1> Sazones del Mundo</h1>
+        <p>Los platillos más icónicos de la gastronomía mundial en un solo lugar.</p>
+    </header>
+    <hr>
+    <main>
+        <section id="menu-principal">
+            <h2>Nuestra Selección Internacional (19 Platos)</h2>
+            <article>
+                <h3>1. Ceviche Peruano (Perú)</h3>
+                <img src="https://tse1.mm.bing.net/th/id/OIP.DX8CXkVq04UnpYeSBXOuxQHaFW?r=0&rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Ceviche Peruano" width="300">
+                <p><strong>Origen:</strong> Perú 🇵🇪</p>
+                <p><strong>Descripción:</strong> Trozos de pescado fresco curados en jugo de limón de pica, acompañados de camote dulce, cancha serrana y cebolla morada.</p>
+                <p><strong>Ingredientes:</strong> Pescado blanco fresco, jugo de limón, ají limo, cebolla morada, camote y maíz cancha.</p>
+                <p><strong>Precio:</strong> $28.000 COP</p>
+                <label for="cant-1">Cantidad:</label>
+                <input type="number" id="cant-1" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Ceviche Peruano" data-precio="28000" data-input="cant-1">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>2. Feijoada (Brasil)</h3>
+                <img src="https://tse2.mm.bing.net/th/id/OIP.8JTdh6S1z5DlSySd58LnsQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Feijoada Brasilera" width="300">
+                <p><strong>Origen:</strong> Brasil 🇧🇷</p>
+                <p><strong>Descripción:</strong> Guiso tradicional de frijoles negros cocinados lentamente con variedad de carnes de cerdo saladas y ahumadas.</p>
+                <p><strong>Ingredientes:</strong> Frijoles negros, carne de cerdo ahumada, chorizo calabresa, arroz blanco, farofa y gajos de naranja.</p>
+                <p><strong>Precio:</strong> $30.000 COP</p>
+                <label for="cant-2">Cantidad:</label>
+                <input type="number" id="cant-2" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Feijoada" data-precio="30000" data-input="cant-2">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>3. Asado Criollo (Argentina)</h3>
+                <img src="https://tse1.explicit.bing.net/th/id/OIP.0iniE1fGiuFxuC7qnU4EPgHaFI?r=0&rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Asado Criollo" width="300">
+                <p><strong>Origen:</strong> Argentina 🇦🇷</p>
+                <p><strong>Descripción:</strong> Selección de cortes de carne de res de primera calidad asados a la parrilla sobre brasas de leña, servidos con chimichurri casero.</p>
+                <p><strong>Ingredientes:</strong> Tira de asado, chorizo criollo, morcilla, salsa chimichurri y ensalada mixta.</p>
+                <p><strong>Precio:</strong> $45.000 COP</p>
+                <label for="cant-3">Cantidad:</label>
+                <input type="number" id="cant-3" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Asado Criollo" data-precio="45000" data-input="cant-3">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>4. Arepa Reina Pepiada (Venezuela)</h3>
+                <img src="https://tse1.mm.bing.net/th/id/OIP.nU7qQdAnqiGBOj1sR001UwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Arepa Reina Pepiada" width="300">
+                <p><strong>Origen:</strong> Venezuela 🇻🇪</p>
+                <p><strong>Descripción:</strong> Arepa de maíz blanco asada a la plancha, rellena de un cremoso guiso frío de pollo desmechado con aguacate y mayonesa.</p>
+                <p><strong>Ingredientes:</strong> Harina de maíz precocida, pechuga de pollo desmechada, aguacate maduro, mayonesa y cilantro fresco.</p>
+                <p><strong>Precio:</strong> $16.000 COP</p>
+                <label for="cant-4">Cantidad:</label>
+                <input type="number" id="cant-4" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Arepa Reina Pepiada" data-precio="16000" data-input="cant-4">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>5. Paella Valenciana (España)</h3>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.jCzsdBuMyg15Je3Wnfk0PwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Paella Valenciana" width="300">
+                <p><strong>Origen:</strong> España 🇪🇸</p>
+                <p><strong>Descripción:</strong> Plato tradicional de arroz a la paellera, aromatizado con azafrán puro y verduras de la huerta valenciana.</p>
+                <p><strong>Ingredientes:</strong> Arroz bomba, pollo, conejo, bajoqueta (judía verde), garrofó, azafrán y romero fresco.</p>
+                <p><strong>Precio:</strong> $42.000 COP</p>
+                <label for="cant-5">Cantidad:</label>
+                <input type="number" id="cant-5" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Paella Valenciana" data-precio="42000" data-input="cant-5">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>6. Boeuf Bourguignon (Francia)</h3>
+                <img src="https://copykat.com/wp-content/uploads/2025/04/Julia-Child-Beef-Bourguignon-Photo-2.jpg.jpg" alt="Boeuf Bourguignon" width="300">
+                <p><strong>Origen:</strong> Francia 🇫🇷</p>
+                <p><strong>Descripción:</strong> Estofado clásico francés de ternera cocinada a fuego lento en vino tinto Borgoña con vegetales aromáticos.</p>
+                <p><strong>Ingredientes:</strong> Carne de res para estofado, vino tinto Borgoña, tocino ahumado, champiñones, zanahorias y cebollitas cambray.</p>
+                <p><strong>Precio:</strong> $38.000 COP</p>
+                <label for="cant-6">Cantidad:</label>
+                <input type="number" id="cant-6" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Boeuf Bourguignon" data-precio="38000" data-input="cant-6">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>7. Goulash (Hungría)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Goulash_from_Hungary.jpg" alt="Goulash Húngaro" width="300">
+                <p><strong>Origen:</strong> Hungría 🇭🇺</p>
+                <p><strong>Descripción:</strong> Sopa o guiso especiado de ternera enriquecido con pimentón húngaro (paprika) y cebolla abundante.</p>
+                <p><strong>Ingredientes:</strong> Magro de res, pimentón dulce húngaro, cebolla, pimientos rojos, patatas y pasta csipetke.</p>
+                <p><strong>Precio:</strong> $29.000 COP</p>
+                <label for="cant-7">Cantidad:</label>
+                <input type="number" id="cant-7" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Goulash Húngaro" data-precio="29000" data-input="cant-7">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>8. Fish and Chips (Reino Unido)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Fish_and_chips_blackpool.jpg" alt="Fish and Chips" width="300">
+                <p><strong>Origen:</strong> Reino Unido 🇬🇧</p>
+                <p><strong>Descripción:</strong> Filete de pescado blanco rebozado en tempura crujiente de cerveza, acompañado de patatas fritas gruesas y puré de guisantes.</p>
+                <p><strong>Ingredientes:</strong> Filete de bacalao o merluza, rebozado con cerveza, patatas fritas, sal, vinagre de malta y puré de guisantes.</p>
+                <p><strong>Precio:</strong> $27.000 COP</p>
+                <label for="cant-8">Cantidad:</label>
+                <input type="number" id="cant-8" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Fish and Chips" data-precio="27000" data-input="cant-8">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>9. Moussaka (Grecia)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Moussaka_plate.jpg" alt="Moussaka Griega" width="300">
+                <p><strong>Origen:</strong> Grecia 🇬🇷</p>
+                <p><strong>Descripción:</strong> Pastel al horno con capas intercaladas de berenjena, carne picada sazonada y cubierta de bechamel gratinada.</p>
+                <p><strong>Ingredientes:</strong> Berenjenas salteadas, carne molida de cordero o res, salsa de tomate especiada, canela y salsa bechamel.</p>
+                <p><strong>Precio:</strong> $31.000 COP</p>
+                <label for="cant-9">Cantidad:</label>
+                <input type="number" id="cant-9" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Moussaka Griega" data-precio="31000" data-input="cant-9">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>10. Sushi / Nigiri (Japón)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Sushi_platter.jpg" alt="Sushi Nigiri Japonés" width="300">
+                <p><strong>Origen:</strong> Japón 🇯🇵</p>
+                <p><strong>Descripción:</strong> Bocado oriental de arroz aderezado con vinagre de arroz, moldeado a mano y coronado con láminas de pescado fresco.</p>
+                <p><strong>Ingredientes:</strong> Arroz para sushi, corte fresco de salmón, atún rojo, wasabi casero, salsa de soya y jengibre encurtido.</p>
+                <p><strong>Precio:</strong> $35.000 COP</p>
+                <label for="cant-10">Cantidad:</label>
+                <input type="number" id="cant-10" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Sushi Nigiri" data-precio="35000" data-input="cant-10">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>11. Pad Thai (Tailandia)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Phat_Thai_kung_chang.JPG" alt="Pad Thai" width="300">
+                <p><strong>Origen:</strong> Tailandia 🇹🇭</p>
+                <p><strong>Descripción:</strong> Salteado wok de fideos de arroz con un toque dulce, ácido y salado característico del tamarindo.</p>
+                <p><strong>Ingredientes:</strong> Fideos de arroz, camarones, tofu, brotes de soya, huevo, cacahuetes tostados y salsa de tamarindo.</p>
+                <p><strong>Precio:</strong> $30.000 COP</p>
+                <label for="cant-11">Cantidad:</label>
+                <input type="number" id="cant-11" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Pad Thai" data-precio="30000" data-input="cant-11">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>12. Chicken Tikka Masala (India)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Chicken_tikka_masala_1.jpg" alt="Chicken Tikka Masala" width="300">
+                <p><strong>Origen:</strong> India 🇮🇳</p>
+                <p><strong>Descripción:</strong> Trozos de pollo marinados asados en horno tandoor, servidos en una salsa cremosa especiada de tomate y curry.</p>
+                <p><strong>Ingredientes:</strong> Pollo marinado en yogur y especias, salsa de tomate, crema de leche, garan masala y arroz basmati.</p>
+                <p><strong>Precio:</strong> $33.000 COP</p>
+                <label for="cant-12">Cantidad:</label>
+                <input type="number" id="cant-12" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Chicken Tikka Masala" data-precio="33000" data-input="cant-12">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>13. Pato Laqueado (China)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Peking_duck_Beijing.jpg" alt="Pato Laqueado Pekín" width="300">
+                <p><strong>Origen:</strong> China 🇨🇳</p>
+                <p><strong>Descripción:</strong> Especialidad imperial de Pekín. Pato de piel crujiente melada servido en crepes delgadas con salsa hoisin.</p>
+                <p><strong>Ingredientes:</strong> Pato asado especiado, melaza de malta, crepes chinas, cebollín y salsa hoisin.</p>
+                <p><strong>Precio:</strong> $48.000 COP</p>
+                <label for="cant-13">Cantidad:</label>
+                <input type="number" id="cant-13" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Pato Laqueado" data-precio="48000" data-input="cant-13">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>14. Bibimbap (Corea del Sur)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Dolsot-bibimbap.jpg" alt="Bibimbap Coreano" width="300">
+                <p><strong>Origen:</strong> Corea del Sur 🇰🇷</p>
+                <p><strong>Descripción:</strong> Tazón de arroz caliente servido con vegetales salteados, tiras de res, yema de huevo y pasta picante gochujang.</p>
+                <p><strong>Ingredientes:</strong> Arroz blanco, espinacas, brotes de soya, zanahoria, carne de res, huevo frito y salsa gochujang.</p>
+                <p><strong>Precio:</strong> $29.000 COP</p>
+                <label for="cant-14">Cantidad:</label>
+                <input type="number" id="cant-14" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Bibimbap Coreano" data-precio="29000" data-input="cant-14">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>15. Pho (Vietnam)</h3>
+                <img src="https://th.bing.com/th/id/OIP.yIPfhIHptGrWuCq5GFMNTQHaF7?w=226&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3.jpg" alt="Pho Vietnamita" width="300">
+                <p><strong>Origen:</strong> Vietnam 🇻🇳</p>
+                <p><strong>Descripción:</strong> Reconfortante sopa aromática de fideos de arroz con finas láminas de ternera cocinadas en un caldo especiado.</p>
+                <p><strong>Ingredientes:</strong> Caldo concentrado de res con anís estrellado, fideos de arroz, ternera, albahaca tailandesa, lima y brotes de soya.</p>
+                <p><strong>Precio:</strong> $26.000 COP</p>
+                <label for="cant-15">Cantidad:</label>
+                <input type="number" id="cant-15" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Pho Vietnamita" data-precio="26000" data-input="cant-15">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>16. Shawarma (Líbano)</h3>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.hZlJ0KdRo4gP_1J8sxJPZAHaFQ?r=0&rs=1&pid=ImgDetMain&o=7&rm=31.jpg" alt="Shawarma Libanés" width="300">
+                <p><strong>Origen:</strong> Líbano 🇱🇧</p>
+                <p><strong>Descripción:</strong> Pan pita enrollado con tiras de carne especiada a la parrilla, salsa de ajo cremoso (toum) y vegetales encurtidos.</p>
+                <p><strong>Ingredientes:</strong> Carne de cordero o pollo marinada, pan pita, salsa toum de ajo, pepinillos y tomate.</p>
+                <p><strong>Precio:</strong> $22.000 COP</p>
+                <label for="cant-16">Cantidad:</label>
+                <input type="number" id="cant-16" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Shawarma Libanés" data-precio="22000" data-input="cant-16">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>17. Tajín de Cordero (Marruecos)</h3>
+                <img src="https://tse1.mm.bing.net/th/id/OIP.0oW0wDbYPyl4g8BubLyaJAHaJc?r=0&rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Tajín de Cordero" width="300">
+                <p><strong>Origen:</strong> Marruecos 🇲🇦</p>
+                <p><strong>Descripción:</strong> Guiso magrebí cocinado en una cazuela cónica de barro con cordero tierno, ciruelas, almendras y especias dulces.</p>
+                <p><strong>Ingredientes:</strong> Carne de cordero, ciruelas pasas, almendras tostadas, canela, azafrán, jengibre y cuscús.</p>
+                <p><strong>Precio:</strong> $39.000 COP</p>
+                <label for="cant-17">Cantidad:</label>
+                <input type="number" id="cant-17" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Tajín de Cordero" data-precio="39000" data-input="cant-17">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>18. Hamburger (Estados Unidos)</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/RedDot_Burger.jpg" alt="Hamburger Estadounidense" width="300">
+                <p><strong>Origen:</strong> Estados Unidos 🇺🇸</p>
+                <p><strong>Descripción:</strong> Hamburguesa clásica norteamericana de carne de res a la parrilla con queso cheddar fundido y patatas fritas.</p>
+                <p><strong>Ingredientes:</strong> Carne de res 100%, queso cheddar, lechuga, tomate, pepinillos, pan brioche y patatas francesas.</p>
+                <p><strong>Precio:</strong> $24.000 COP</p>
+                <label for="cant-18">Cantidad:</label>
+                <input type="number" id="cant-18" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Hamburger Clásica" data-precio="24000" data-input="cant-18">🛒 Agregar al Carrito</button>
+            </article>
+            <hr>
+            <article>
+                <h3>19. Poutine (Canadá)</h3>
+                <img src="https://tse2.mm.bing.net/th/id/OIP.PuEiohc-MaP03A18UpNicAHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Poutine Canadiense" width="300">
+                <p><strong>Origen:</strong> Canadá 🇨🇦</p>
+                <p><strong>Descripción:</strong> Popular plato quebequense de patatas fritas crujientes cubiertas con trozos de queso fresco y bañadas en gravy espeso de carne.</p>
+                <p><strong>Ingredientes:</strong> Patatas fritas gruesas, trozos de queso cuajado (cheese curds) y salsa gravy de carne salada.</p>
+                <p><strong>Precio:</strong> $20.000 COP</p>
+                <label for="cant-19">Cantidad:</label>
+                <input type="number" id="cant-19" value="1" min="1" max="10">
+                <button type="button" class="btn-agregar" data-nombre="Poutine Canadiense" data-precio="20000" data-input="cant-19">🛒 Agregar al Carrito</button>
+            </article>
+        </section>
+        <hr>
+        <section id="carrito-compras">
+            <h2>Resumen de tu Pedido</h2>            
+            <ul id="lista-carrito">
+            </ul>
+            <p><strong>Total acumulado:</strong> $<span id="total-precio">0</span> COP</p>
+            <button type="button" id="btn-vaciar"> Vaciar Carrito</button>
+            <br><br>
+             <a href="index3.html" style="text-decoration: none;">
+                    <button type="button">💳 Ir a Pagar</button>
+                </a>
+                <br>
+                <br>
+
+<a href="index2.html" style="text-decoration: none;">
+    <button type="button" style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #007BFF; color: white; border: none; border-radius: 5px;">
+         Volver
+    </button>
+</a>
+    <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script> 
+</body>
+</html>
